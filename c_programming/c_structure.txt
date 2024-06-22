@@ -1,0 +1,9 @@
+// documentation section (wap to sum of n number. )
+// linking section (#include <lib-name.h>)
+// global/Definition  declaration section (CONST, function declaration, class declaration) [optional]
+
+return_type main(){
+    // logic / block of statements [conditional, keywords, loops, string ...]
+}
+
+// sub-function declaration section [optional]

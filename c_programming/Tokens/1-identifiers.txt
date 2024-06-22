@@ -1,0 +1,40 @@
+An identifier is a name used to identify a variable, function, array, structure, or any other user-defined item. Identifiers are crucial in C because they give programmers a way to refer to different elements of the program in a readable and understandable manner.
+
+1] [a-z, A-Z, 0-9, _] : level1, level_1
+2] you can not strat with the digit: 1level
+3] not limit the length of an identifier
+4] identifier must be unique x = 10, int x(){}
+5] Identifiers cannot be a reserved keyword in C: for = 10
+6]  Identifiers cannot include special characters other than the underscore (_). @hello, #gvfhdgfyhg
+7] White-space are not allowed: firts name
+8] case sensitive: firstname, first_name, firstName, FIRSTNAME, FirstName
+
+Valid Identifiers:
+-----------------
+• int age;
+• float total_balance;
+• char firstName[50];
+• _score; // valid but discouraged for general use
+• sum2;
+
+
+Invalid Identifiers:
+-------------------
+• int 2ndPlayer;    // Cannot start with a digit
+• float total#balance; // Contains invalid character '#'
+• char first Name[50]; // Contains a space
+• int for; // 'for' is a keyword
+• double &amount; // Contains invalid character '&'
+
+
+• Trivial Variables: i,n,c,etc... (Only one letter. If one letter isn't clear, then make it a Local Variable).
+
+• Const Variables: ALL_CAPS.
+
+• camelCase: Typically used for variables and functions (e.g., totalBalance, calculateTotal).
+
+• snake_case: Often used for variables and functions (e.g., total_balance, calculate_total).
+
+• UPPER_CASE_WITH_UNDERSCORES: Usually used for constants and macros (e.g., MAX_SIZE, PI_VALUE).
+
+• PascalCase: Typically used for type names such as structs, enums, and classes (e.g., EmployeeRecord, RectangleDimensions, StatusCode).
