@@ -4,3 +4,39 @@ syntax:
 
 initialize a variable
 data_type var_name = value;
+
+// Example : variable
+
+#include <stdio.h>
+
+int main() {
+    // int age;
+    // age = 20;
+    
+    // int age = 20, page = 400;
+    
+    // int age = 20;
+    // int page = 400;
+    
+    // int age, page;
+    // get data from the user
+    // printf("Enter your age: " );
+    // scanf("%d", &age);
+    
+    // printf("Enter your page: " );
+    // scanf("%d", &page);
+    
+    // printf("Enter your age and page sep. by space: " );
+    // scanf("%d %d", &age, &page);
+    
+    // printf("Your age is : %d\n", age);
+    // printf("Total page is: %d", page);
+
+
+    // int num1, num2, num3;
+    // num1 = num2 = num3 = 10;
+    // printf("%d", num1);
+    // printf("%d", num2);
+    // printf("%d", num3);
+    // return 0;
+}

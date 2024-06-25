@@ -1,0 +1,34 @@
+Keywords in C are reserved words that have predefined meanings and purposes. They are part of the language syntax and cannot be used as identifiers (variable names, function names, etc.).
+
+int: Declares an integer variable, a data type for storing whole numbers.
+float: Declares a floating-point variable, used for storing decimal numbers.
+char: Declares a character variable, typically used for storing single characters.
+double: Declares a double-precision floating-point variable, used for more accurate decimal numbers.
+void: Specifies that a function does not return a value or declares a pointer with no associated data type.
+if: Introduces a conditional statement that executes code if a specified condition is true.
+else: Provides an alternative set of instructions if the if condition is false.
+switch: Allows multi-way branching based on the value of an integer or enumeration.
+case: Defines a specific branch in a switch statement, executed if the branch's value matches the switch expression.
+for: Introduces a loop that executes a block of code a specific number of times, controlled by an initialization, condition, and increment.
+while: Introduces a loop that continues as long as a specified condition remains true.
+do: Used with while to create a loop that executes a block of code once before checking the condition.
+return: Exits a function and optionally returns a value to the calling code.
+continue: Skips the rest of the current loop iteration and proceeds with the next iteration.
+break: Exits the nearest enclosing loop or switch statement.
+typedef: Defines a new name (alias) for an existing data type.
+struct: Declares a structure, a composite data type that groups variables under a single name.
+enum: Declares an enumeration, a data type consisting of named integer constants.
+union: Declares a union, a data type allowing different variables to share the same memory location.
+static: Preserves the value of a variable between function calls or limits the scope of a function or variable to its source file.
+const: Declares a variable whose value cannot be modified after initialization.
+volatile: Tells the compiler that a variable's value may change at any time, preventing certain optimizations.
+extern: Declares a variable or function defined in another source file or elsewhere in the code.
+register: Suggests that a variable be stored in a processor register for faster access, if possible.
+sizeof: Returns the size, in bytes, of a variable or data type.
+goto: Transfers control to a labeled statement within the same function.
+#include: Preprocessor directive that includes the contents of a file or library in the source code.
+#define: Defines a macro, which is a constant or function-like code that the preprocessor substitutes into the source code.
+#ifdef: Tests if a macro is defined, allowing conditional compilation of code.
+#endif: Ends a block of code that is conditionally compiled with #ifdef or #ifndef.
+#ifndef: Tests if a macro is not defined, allowing conditional compilation of code.
+#undef: Undefines a macro, removing its definition for subsequent code.
