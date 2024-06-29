@@ -1,0 +1,40 @@
+#include <stdio.h>
+
+void  main(){
+    // infinite loop
+    while(1){
+        int age;
+        float weight;
+        printf("Enter age: ");
+        scanf("%d", &age);
+       
+    
+        if(age >= 18){ 
+            printf("Enter weight: ");
+            scanf("%f", &weight);
+            if (weight >= 50.0){
+                printf("You are eligible to donate\n\n");
+            } else {
+                printf("You are not eligible to donate\n\n");
+            }
+        } else {
+            printf("You are not eligible to donate\n\n");
+        }
+    }
+}
+
+
+#include <stdio.h>
+
+void  main(){
+    // finite loop
+    int start = 1, end = 10;
+    while(start <= end){
+       printf("num : %d\n", start);
+    //   start++;
+    start += 1;
+    }
+    
+    
+   
+}

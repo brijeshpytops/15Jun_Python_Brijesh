@@ -1,0 +1,67 @@
+#include <stdio.h>
+
+void  main(){
+    
+    int start = 1, end = 10;
+    
+    for(start; start <= end; start++){
+        printf("num : %d\n", start);
+    }
+   
+}
+
+
+#include <stdio.h>
+
+void  main(){
+
+    // odd number
+    for(int start = 1; start <= 10; start+=2){
+        printf("num : %d\n", start);
+    }
+    
+    // even
+    for(int start = 0; start <= 10; start+=2){
+        printf("num : %d\n", start);
+    }
+   
+}
+
+
+#include <stdio.h>
+
+void  main(){
+
+    // odd number
+    for(int start = 1; start <= 10; start+=1){
+        if(start % 2 == 0){
+            printf("%d - is even\n", start);
+        }else{
+            printf("%d - is odd\n", start);
+        }
+    }
+}
+
+#include <stdio.h>
+
+void  main(){
+
+    // even/odd number
+    for(int start = 1; start <= 10; start+=1){
+        (start % 2 == 0) ? printf("%d - is even\n", start) : printf("%d - is odd\n", start);
+        
+    }
+}
+
+// Online C compiler to run C program online
+#include <stdio.h>
+
+int main() {
+    // right to left
+    int start = 10, end = 1;
+    for(int row = start; row >= end; row--){
+        printf("%d ", row);
+    }
+
+    return 0;
+}
