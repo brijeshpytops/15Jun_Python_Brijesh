@@ -209,3 +209,23 @@ void  main(){
         printf("\n");
     }
 }
+
+
+A 
+A B 
+A B C 
+A B C D 
+A B C D E 
+
+#include <stdio.h>
+
+int main() {
+    int num = 5;
+    for(int row = 1; row <= num; row+=1){
+        for(int col = 1; col <= row; col++){
+            printf("%c ", col + 64);
+        }
+        printf("\n");
+    }
+    return 0;
+}
