@@ -1,0 +1,115 @@
+a function is a block of code that performs a specific task. It is a reusable piece of code that can be called from other parts of the program, reducing redundancy and improving code organization. Functions allow for modular programming, making the code easier to manage and understand.
+
+syntax : 
+
+return_type function_name(data_type var1, data_type var2...data_type varn[formal parameter/arguments]){
+    // block code that performs a specific task
+}
+
+// function called from other parts of the program
+function_name(value1, value2,...valuen[actual parameter/arguments])
+
+types of function:
+- built-in function
+    - printf(), scanf()
+- user-defined function
+    - with return_type and with parameter/arguments
+    Example :
+        #include <stdio.h>
+
+        int sum(int tomato, int potato){
+            return tomato + potato;
+        }
+
+        void main() {
+            printf("Total price: %d", sum(110, 30));
+            printf("Total price: %d", sum(50, 50));
+        }
+    - with return_type and without parameter/arguments
+    Example :
+        #include <stdio.h>
+
+        int sum(){
+            int tomato = 120, potato = 30;
+            return tomato + potato;
+        }
+
+        void main() {
+            printf("Total price: %d", sum());
+            printf("Total price: %d", sum());
+        }
+    - without return_type and with parameter/arguments
+    Example :
+        #include <stdio.h>
+
+        void sum(int a, int b){
+            printf("Result: %d" , a + b);
+        }
+
+        void main() {
+            sum(10, 20);
+            sum(30, 40);
+        }
+    - without return_type and without parameter/arguments
+    Example :
+    #include <stdio.h>
+
+    void sum(){
+        int tomato = 120, potato = 30;
+        printf("Result: %d" , tomato + potato);
+    }
+
+    void main() {
+        sum();
+        sum();
+    }
+
+
+----------------------------------------------------------------
+Example 1:
+#include <stdio.h>
+
+void check_age_and_weight(){
+    int age;
+    float weight;
+    printf("Enter age: ");
+    scanf("%d", &age);
+    if(age >= 18){ 
+        printf("Enter weight: ");
+        scanf("%f", &weight);
+        if (weight >= 50.0){
+            printf("You are eligible to donate\n\n");
+        } else {
+            printf("You are not eligible to donate\n\n");
+        }
+    } else {
+        printf("You are not eligible to donate\n\n");
+    }
+}
+
+void main() {
+    while(1){
+        check_age_and_weight();
+    }
+}
+
+-------------------------------------------------------------
+recursion function
+
+#include <stdio.h>
+// 5 * 4 * 3 * 2 * 1 = 120
+// 5 + 4 + 3 + 2 + 1 = 15
+// (5 ^ 2) + (4 ^ 2) + (3 ^ 2) + (2 ^ 2) + (1 ^ 2) = 
+int square_of_n_num(int num){
+    if ( num == 1 ){
+        printf("(%d ^ 2) ", num);
+        return 1;
+    } else {
+        printf("(%d ^ 2) + ", num);
+        return (num * num) + square_of_n_num(num - 1);
+    }
+}
+
+void main() {
+   printf("= %d", square_of_n_num(5));
+}
