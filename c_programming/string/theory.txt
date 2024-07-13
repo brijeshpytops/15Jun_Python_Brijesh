@@ -1,0 +1,131 @@
+A string in C is a fundamental building block for working with text data. It's essentially a sequence of characters that are stored in a one-dimensional array of characters. The key thing to remember about strings in C is that they are null(\0)-terminated. This means that the end of the string is indicated by a special character, the null character (\0), which has a value of zero.
+
+Declaration: You can declare a string in C by defining an array of characters. For instance, the following code declares a string variable name that can hold up to 20 characters:
+
+char string_name[20];
+
+Initialization: There are different ways to initialize a string in C. You can directly assign a string literal enclosed in double quotes to the array. The compiler automatically adds the null terminator at the end.
+
+char string_name[20] = "value";
+
+Access: There are different ways to access a string
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fullname[] = "Raj Gondaliya";
+    
+    printf("My name is %s", fullname);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fullname[] = "Raj Gondaliya";
+    
+    printf("Char : %c", fullname[4]);
+
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fullname[] = "Raj Gondaliya";
+    int start_pos = 9 , end_pos = 12;
+    
+    for(start_pos; start_pos <= end_pos; start_pos++){
+    printf("%c", fullname[start_pos]);
+    }
+
+    return 0;
+}
+
+// convert lower to upper and upper to lower
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fullname[] = "ToPS TeCHnoLOgY PvT. LTd.";
+    int len = sizeof(fullname)/sizeof(fullname[0]);
+    int start_pos = 0, end_pos = len;
+    
+    for(start_pos; start_pos < end_pos; start_pos++){
+        if(fullname[start_pos] <= 122 && fullname[start_pos] >= 97){
+            printf("%c", fullname[start_pos]-32);
+            continue;
+        }
+        printf("%c", fullname[start_pos]);
+    }
+    
+    return 0;
+}
+
+// find the length of the given string in
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fname[] = "Brijesh";
+    printf("String len is: %d", strlen(fname));
+    return 0;
+}
+
+
+// merge two or more string 
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fname[20] = "Brijesh";
+    char space[] = " ";
+    char lname[] = "Gondaliya";
+    
+    strcat(fname, space);
+    strcat(fname, lname);
+    printf("Fullname: %s", fname);
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char fname[20] = "Brijesh";
+    char space[20];
+    
+    strcpy(space, fname);
+    printf("Fullname: %s", space);
+    return 0;
+}
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  char str1[] = "Apple";
+  char str2[] = "Apple";
+  int compare = strcmp(str1, str2);
+  printf("%d", compare);
+  if (compare < 0) {
+    printf("%s is less than %s\n", str1, str2);
+  } else if (compare > 0) {
+    printf("%s is greater than %s\n", str1, str2);
+  } else {
+    printf("%s is equal to %s\n", str1, str2);
+  }
+  return 0;
+}
+
+String manipulation: C provides a set of library functions for working with strings. These functions allow you to perform operations like copying, concatenation (joining strings), searching for characters or substrings, and more. Some commonly used string functions include strcpy, strcat, strlen, and strstr.
+
