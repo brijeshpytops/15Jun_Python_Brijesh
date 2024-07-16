@@ -1,0 +1,54 @@
+Important link : https://www.geeksforgeeks.org/dynamic-memory-allocation-in-c-using-malloc-calloc-free-and-realloc/
+
+A pointer is a variable that stores the memory address of another variable. Instead of holding a data value directly, a pointer holds the location in memory where the data value is stored. Pointers are powerful tools in C programming because they allow you to directly manipulate memory, which can lead to more efficient and flexible code.
+
+Declaration: To declare a pointer, you specify the type of data the pointer will point to, followed by an asterisk (*), and then the pointer's name. For example:
+
+int *ptr;   // ptr is a pointer to an integer
+char *cptr; // cptr is a pointer to a character
+
+Initialization: Pointers are often initialized to the address of a variable using the address-of operator (&):
+
+int num = 10;
+int *ptr = &num; // ptr now holds the address of num
+
+
+Dereferencing: To access the value stored at the address a pointer is pointing to, you use the dereference operator (*):
+
+int value = *ptr; // value now holds the value of num, which is 10
+
+
+Example :
+
+#include <stdio.h>
+
+int main() {
+    int num = 42;
+    int *ptr = &num; // ptr is a pointer to num
+
+    printf("Value of num: %d\n", num);      // Output: Value of num: 42
+    printf("Address of num: %p\n", &num);   // Output: Address of num: [address]
+    printf("Value of ptr: %p\n", ptr);      // Output: Value of ptr: [address]
+    printf("Value pointed to by ptr: %d\n", *ptr); // Output: Value pointed to by ptr: 42
+
+    return 0;
+}
+
+
+
+Benefits of Pointers
+--------------------
+Dynamic Memory Allocation: Pointers allow you to allocate memory dynamically using functions like malloc, calloc, realloc, and free.
+
+Array and String Handling: Pointers provide efficient ways to handle arrays and strings.
+
+Function Arguments: Pointers can be used to pass variables by reference to functions, allowing the function to modify the original variable.
+
+Data Structures: Pointers are fundamental in creating complex data structures like linked lists, trees, and graphs.
+
+
+Null Pointers: A null pointer is a pointer that points to nothing. It is good practice to initialize pointers to NULL if they are not assigned any address.
+
+Example :
+
+int *ptr = NULL;
