@@ -1,0 +1,150 @@
+
+1] create file
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+
+    f = fopen("example.txt", "w");
+
+    if(f == NULL){
+        printf("File is not created");
+        exit(0);
+    }else{
+        printf("File is created successfully");
+    }
+    
+    fclose(f);
+}
+
+
+2] write data into the file
+
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+    char data[100];
+
+    f = fopen("example.txt", "w");
+
+    printf("Enter something...");
+    fgets(data, sizeof(data), stdin);
+
+    if(f == NULL){
+        printf("File is unable to open");
+        exit(0);
+    }else{
+        printf("File is opened successfully");
+    }
+
+    printf("DATA: %s", data);
+    fprintf(f, "%s", data);
+
+    fclose(f);
+}
+
+3] data read from the file
+
+#include<stdio.h>
+
+void main(){
+    FILE *f;
+    char data[100];
+
+    f = fopen("example.txt", "r");
+
+    if(f == NULL){
+        printf("File is unable to open");
+        exit(0);
+    }else{
+        printf("File is opened successfully");
+    }
+    fgets(data, sizeof(data), f);
+    printf("DATA: %s", data);
+
+    fclose(f);
+}
+
+
+4] renamed file
+
+#include<stdio.h>
+
+void main(){
+   char old[] = "example.txt";
+   char new_[] = "sample.txt";
+
+   int res = rename(old, new_);
+
+   if (res == 0){
+    printf("File renamed successfully");
+   } else {
+   printf("Opps, something went wrong");
+   }
+}
+
+5] file delete
+
+#include<stdio.h>
+
+void main(){
+   char new_[] = "sample.txt";
+
+   int res = remove(new_);
+
+   if (res == 0){
+    printf("File deleted successfully");
+   } else {
+   printf("Opps, something went wrong");
+   }
+}
+
+6] get the current postion of pointer and move the pointer on specific postion
+
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    // Move the file pointer to the end of the file
+    fseek(file, 0, SEEK_END);
+
+    // Get the current file position
+    long fileSize = ftell(file);
+    if (fileSize == -1L) {
+        perror("Error getting file position");
+    } else {
+        printf("File size: %ld bytes\n", fileSize);
+    }
+
+    fclose(file);
+    return 0;
+}
+
+7] The rewind function sets the file position indicator to the beginning of the file for the given file stream.
+
+#include <stdio.h>
+
+int main() {
+    FILE *file = fopen("example.txt", "r");
+    if (file == NULL) {
+        perror("Error opening file");
+        return 1;
+    }
+
+    // Move the file pointer to the end of the file
+    fseek(file, 0, SEEK_END);
+
+    // Rewind the file pointer to the beginning of the file
+    rewind(file);
+    printf("File pointer reset to the beginning\n");
+
+    fclose(file);
+    return 0;
+}
+
