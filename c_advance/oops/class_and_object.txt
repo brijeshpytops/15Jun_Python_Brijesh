@@ -1,0 +1,117 @@
+#include <iostream>
+using namespace std;
+
+class Car{
+    public:
+    // data member
+    string name = "BMW";
+    int price = 50;
+    string color = "black";
+    
+    // member function
+    void break_(){
+        cout<<"Break"<<endl;
+    }
+    void horn(){
+        cout<<"horn"<<endl;
+    }
+};
+
+int main() {
+    Car car1;
+    cout<<car1.name<<endl;
+    cout<<car1.price<<endl;
+    cout<<car1.color<<endl;
+    car1.break_();
+    car1.horn();
+    
+    return 0;
+}
+// --------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class Car{
+    public:
+    // data member
+    string name;
+    int price;
+    string color;
+    
+    // member function
+    void break_(){
+        cout<<"Break"<<endl;
+    }
+    void horn(){
+        cout<<"horn"<<endl;
+    }
+};
+
+
+
+int main() {
+    Car car1, car2;
+    
+    car1.name = "BMW";
+    car1.price = 30;
+    car1.color = "black";
+    cout<<car1.name<<endl;
+    cout<<car1.price<<endl;
+    cout<<car1.color<<endl;
+    car1.break_();
+    car1.horn();
+    
+    car2.name = "AMW";
+    car2.price = 100;
+    car2.color = "red";
+    cout<<car2.name<<endl;
+    cout<<car2.price<<endl;
+    cout<<car2.color<<endl;
+    car2.break_();
+    car2.horn();
+    
+    return 0;
+}
+
+// ----------------------------------------------------------------
+#include <iostream>
+using namespace std;
+
+class Auth {
+public:
+    // This is the nested class
+    class Registration {
+    public:
+        void display() {
+            cout << "registration" << endl;
+        }
+    };
+    class Login{
+    public:
+        void display(){
+            cout<<"Login";
+        }
+    };
+    class ForgotPassword{
+        public:
+        void display(){
+            cout<<"Forgot password";
+        }
+    };
+    
+    void authDisplay(){
+        cout<<"authDisplay";
+    }
+
+};
+int main() {
+    
+    Auth authObj;
+    authObj.authDisplay();
+
+    // Creating an object of the inner class using the outer class
+    Auth::Registration p1;
+    p1.display();
+
+    return 0;
+}

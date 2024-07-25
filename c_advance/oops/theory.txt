@@ -1,0 +1,14 @@
+1] class and object
+syntax of class:
+class ClassName{
+    // visibility :
+    // data member [attribute and property]
+    // member function [method and function]
+}
+
+ClassName obj_name; // syntax of object
+
+2] encapsulation
+3] inheritance
+4] abstraction
+5] polymorphisum
