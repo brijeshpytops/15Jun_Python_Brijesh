@@ -1,0 +1,145 @@
+A constructor in C++ is a special member function of a class that is executed whenever an object of that class is created. The primary purpose of a constructor is to initialize objects of its class.
+
+Key Features of Constructors:
+----------------------------
+
+Same Name as Class:
+The constructor has the same name as the class.
+
+No Return Type:
+Constructors do not have a return type, not even void.
+
+Automatic Invocation:
+A constructor is automatically called when an object of the class is created.
+
+Overloading:
+Constructors can be overloaded. This means you can have multiple constructors with different parameters.
+
+Initialization:
+They are primarily used to initialize the data members of the object.
+
+Types of Constructors:
+
+Default Constructor:
+A constructor that takes no arguments. If no constructors are defined, the compiler provides a default constructor.
+
+Parameterized Constructor:
+A constructor that takes arguments to initialize an object with specific values.
+
+Copy Constructor:
+A constructor that initializes an object using another object of the same class.
+
+Example :
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int x;
+
+    // Default constructor
+    MyClass() {
+        x = 0;
+        cout << "Default constructor called" << endl;
+    }
+
+    // Parameterized constructor
+    MyClass(int val) {
+        x = val;
+        cout << "Parameterized constructor called" << endl;
+    }
+
+    // Copy constructor
+    MyClass(const MyClass &obj) {
+        x = obj.x;
+        cout << "Copy constructor called" << endl;
+    }
+
+    void display() {
+        cout << "x = " << x << endl;
+    }
+};
+
+int main() {
+    MyClass obj1;          // Calls default constructor
+    MyClass obj2(10);      // Calls parameterized constructor
+    MyClass obj3 = obj2;   // Calls copy constructor
+
+    obj1.display();
+    obj2.display();
+    obj3.display();
+
+    return 0;
+}
+
+
+Destructor: 
+
+A destructor in C++ is a special member function of a class that is executed when an object of that class is destroyed. The primary purpose of a destructor is to free resources that the object may have acquired during its lifetime, such as memory, file handles, or network connections.
+
+Key Features of Destructors:
+
+Same Name as Class with a Tilde (~):
+The destructor has the same name as the class, but is preceded by a tilde (~).
+
+No Return Type:
+Destructors do not have a return type, not even void.
+
+No Parameters:
+Destructors cannot have parameters and cannot be overloaded.
+
+Automatic Invocation:
+A destructor is automatically called when an object goes out of scope or is explicitly deleted.
+
+Single Destructor:
+A class can have only one destructor.
+
+
+Purpose of Destructors:
+
+Resource Deallocation:
+    Free dynamically allocated memory.
+    Close files.
+    Release network resources.
+
+
+Example :
+
+#include <iostream>
+using namespace std;
+
+class MyClass {
+public:
+    int* ptr;
+
+    // Constructor
+    MyClass(int val) {
+        ptr = new int;  // Dynamically allocate memory
+        *ptr = val;
+        cout << "Constructor called. Value: " << *ptr << endl;
+    }
+
+    // Destructor
+    ~MyClass() {
+        cout << "Destructor called. Value: " << *ptr << endl;
+        delete ptr;  // Free the allocated memory
+    }
+
+    void display() {
+        cout << "Value: " << *ptr << endl;
+    }
+};
+
+int main() {
+    MyClass obj1(10);  // Constructor is called
+    obj1.display();
+
+    {  // Block scope
+        MyClass obj2(20);  // Constructor is called
+        obj2.display();
+    }  // Destructor is called for obj2 when it goes out of scope
+
+    // Destructor is called for obj1 when the program ends
+    return 0;
+}

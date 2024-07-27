@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Person{
+    // data member
+    int atm_pin = 1111;
+    
+    public:
+    // member function
+    void set_atm_pin(int p){
+        atm_pin = p;
+    }
+    int get_display_atm_pin(){
+        return atm_pin;
+    }
+};
+
+int main() {
+    Person p1, p2;
+    p1.set_atm_pin(1111);
+    p2.set_atm_pin(2222);
+    
+    cout<<p1.get_display_atm_pin()<<endl;
+    cout<<p2.get_display_atm_pin()<<endl;
+
+    return 0;
+}

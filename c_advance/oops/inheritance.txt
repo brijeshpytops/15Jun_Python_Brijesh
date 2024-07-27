@@ -1,0 +1,148 @@
+Single inheritance:
+//-------------------
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am from class A"<<endl;
+    }
+};
+
+class B:public A{
+    public:
+    void b(){
+        cout<<"I am from class B"<<endl;
+    }
+};
+
+int main() {
+    B b1;
+    b1.b();
+    b1.a();
+    return 0;
+}
+
+multilevel
+//------------
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am from class A"<<endl;
+    }
+};
+
+class B:public A{
+    public:
+    void b(){
+        cout<<"I am from class B"<<endl;
+    }
+};
+class C:public B{
+    public:
+    void c(){
+        cout<<"I am from class C"<<endl;
+    }
+};
+
+int main() {
+    C obj;
+    obj.b();
+    obj.a();
+    obj.c();
+    return 0;
+}
+
+multiple:
+---------
+#include <iostream>
+using namespace std;
+
+class A{
+    public:
+    void a(){
+        cout<<"I am from class A"<<endl;
+    }
+};
+
+class B{
+    public:
+    void b(){
+        cout<<"I am from class B"<<endl;
+    }
+};
+class C:public A, public B{
+    public:
+    void c(){
+        cout<<"I am from class C"<<endl;
+    }
+};
+
+int main() {
+    C obj;
+    obj.b();
+    obj.a();
+    obj.c();
+    return 0;
+}
+
+
+herarchical :
+#include <iostream>
+using namespace std;
+
+class Shape{
+    public:
+  void shape(){
+      cout<<"shape";
+  }  
+};
+
+class Shape2D: public Shape{
+    public:
+  void shape2D(){
+      cout<<"shape2D";
+  }  
+};
+
+class Circle2D: public Shape2D{
+    public:
+  void circle2D(){
+      cout<<"circle2D";
+  }  
+};
+
+class Square2D: public Shape2D{
+    public:
+  void square2d(){
+      cout<<"square2d";
+  }  
+};
+
+
+class Shape3D: public Shape{
+    public:
+  void shape3D(){
+      cout<<"shape3D";
+  }  
+};
+class Cube3D: public Shape3D{
+    public:
+  void cube3D(){
+      cout<<"cube3D";
+  }  
+};
+
+
+int main() {
+    Cube3D obj;
+    obj.cube3D();
+    obj.shape3D();
+    obj.shape();
+    
+    
+}
