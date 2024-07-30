@@ -1,0 +1,45 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Define a class to represent a Person
+class Person {
+private:
+    string name;
+    int age;
+
+public:
+    // Constructor to initialize a Person
+    Person(string n, int a){
+        name = n;
+        age = a;
+    }
+
+    // Function to get the name
+    string getName() {
+        return name;
+    }
+
+    // Function to get the age
+    int getAge(){
+        return age;
+    }
+
+    // Function to print a Person's details
+    void printPerson(){
+        cout << "Name: " << name << ", Age: " << age <<endl;
+    }
+};
+
+int main() {
+    // Create an object of the Person class
+    Person person("John Doe", 30);
+    
+    // Use the public member functions to interact with the object
+    person.printPerson();
+    
+    // Access data members through public methods
+    cout << "Name: " << person.getName() << ", Age: " << person.getAge() << endl;
+
+    return 0;
+}
