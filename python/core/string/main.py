@@ -121,42 +121,42 @@ password = "#@#%^$@"
 
 # print(password.count("#@#%^$@"))
 
-password = input("Enter a password: ")
+# password = input("Enter a password: ")
 
-u = False
-l = False
-d = False
-s = False
-len_ = False
+# u = False
+# l = False
+# d = False
+# s = False
+# len_ = False
 
-if len(password) >= 8:
-    len_ = True
-    for ch in password:
-        if ch.isupper():
-            u = True
-        if ch.islower():
-            l = True
-        if ch.isdigit():
-            d = True
-        if not ch.isalnum():
-            s = True
+# if len(password) >= 8:
+#     len_ = True
+#     for ch in password:
+#         if ch.isupper():
+#             u = True
+#         if ch.islower():
+#             l = True
+#         if ch.isdigit():
+#             d = True
+#         if not ch.isalnum():
+#             s = True
 
-if len_ and l and u and d and s:
-    print("Valid password")
-    print("Strong password")
-    print("Password strength: Very Strong")
-else:
-    print("Invalid password")
-    if not len_:
-        print("Password should be at least 8 characters long")
-    if not l:
-        print("Password should contain at least one lowercase letter")
-    if not u:
-        print("Password should contain at least one uppercase letter")
-    if not d:
-        print("Password should contain at least one digit")
-    if not s:
-        print("Password should contain at least one special character")
+# if len_ and l and u and d and s:
+#     print("Valid password")
+#     print("Strong password")
+#     print("Password strength: Very Strong")
+# else:
+#     print("Invalid password")
+#     if not len_:
+#         print("Password should be at least 8 characters long")
+#     if not l:
+#         print("Password should contain at least one lowercase letter")
+#     if not u:
+#         print("Password should contain at least one uppercase letter")
+#     if not d:
+#         print("Password should contain at least one digit")
+#     if not s:
+#         print("Password should contain at least one special character")
 
 
 # string formatting
@@ -174,3 +174,8 @@ else:
 # print("Book name is: {0} Book price is: {1} Book total pages : {2}".format(name, price, pages))
 
 # print("Book name is: %s Book price is: %.2f Book total pages : %d" % (name, price, pages))
+
+# string = input("Enter a string: ").split()
+# print(len(string))
+
+# string = "Python Programming"
