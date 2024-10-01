@@ -107,9 +107,17 @@ nums = [1,2,3,4,5,6,7,8,9,10,1,2,3,4,4]
 # # print(id(num1), id(num2))
 # print(id(num1), id(num3))
 
-num1 = [1,2,3,4,5]
-num2 = num1.copy()
-print(num1)
-print(num2)
-print(id(num1))
-print(id(num2))
+# num1 = [1,2,3,4,5]
+# num2 = num1.copy()
+# print(num1)
+# print(num2)
+# print(id(num1))
+# print(id(num2))
+
+
+nums = [10, 20, [30, 40, [50, 60, 60, [70, 80,[90]]]]]
+# print(nums[-1])  
+print(nums[-1][-1])  
+print(nums[-1][-1][-1])  
+print(nums[-1][-1][-1][-1])  
+print(nums[-1][-1][-1][-1][-1])  
