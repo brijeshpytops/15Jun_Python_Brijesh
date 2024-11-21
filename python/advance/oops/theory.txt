@@ -1,0 +1,9 @@
+class and object
+Encapsulation
+    - Cunstructor
+    - access specifiers
+Inheritance
+Abstraction
+Polymorphism
+    - Compile time - static binding
+    - Run time - dynamic binding
