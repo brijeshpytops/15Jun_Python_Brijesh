@@ -2,8 +2,12 @@ class and object
 Encapsulation
     - Cunstructor
     - access specifiers
+    - name mangling system
 Inheritance
+     - types
+     - mro()
 Abstraction
 Polymorphism
     - Compile time - static binding
     - Run time - dynamic binding
+    - super()
