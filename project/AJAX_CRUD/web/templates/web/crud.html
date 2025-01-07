@@ -55,7 +55,11 @@
                   <td>{{blog.title}}</td>
                   <td>{{blog.content}}</td>
                   <td>
-                    <button class="edit-btn" blog-id="{{blog.id}}">
+                    <button
+                      class="edit-btn"
+                      blog-id="{{blog.id}}"
+                      onclick="editBlog('{{ blog.id }}', '{{ blog.title }}', '{{ blog.content }}')"
+                    >
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     &nbsp;
@@ -106,16 +110,68 @@
 
     <script>
       $(document).ready(function () {
-        // insert blog
+        // Insert or update blog
         $("#add-item-form").on("submit", function (event) {
           event.preventDefault();
 
+          var blogId = $(this).attr("data-blog-id"); // Check if it's an update
+          var title = $("#title").val();
+          var content = $("#content").val();
+
+          var url = blogId ? `edit/${blogId}/` : '{% url "create_blog" %}';
+          var requestType = blogId ? "PUT" : "POST"; // Use PUT for updates if supported
+
+          $.ajax({
+            type: requestType,
+            url: url,
+            headers: {
+              "X-CSRFToken": "{{ csrf_token }}",
+            },
+            data: JSON.stringify({ title: title, content: content }),
+            contentType: "application/json",
+            success: function (response) {
+              console.log(response);
+              location.reload();
+              $("#form-msg")
+                .removeClass("d-none")
+                .addClass("d-block")
+                .text(response.message);
+              $("#title").val("");
+              $("#content").val("");
+              $("button[type='submit']").text("Add");
+              $("#add-item-form").removeAttr("data-blog-id");
+            },
+            error: function (error) {
+              console.error("Error saving item:", error);
+            },
+          });
+        });
+
+        // Edit blog
+        window.editBlog = function (blogId, blogTitle, blogContent) {
+          $("#title").val(blogTitle);
+          $("#content").val(blogContent);
+          $("#add-item-form").attr("data-blog-id", blogId); // Set blog ID for update
+          $("button[type='submit']").text("Update"); // Change button text
+
+          $("html, body").animate(
+            {
+              scrollTop: $("#add-item-form").offset().top,
+            },
+            500
+          );
+        };
+
+        $("#add-item-form").on("submit", function (event) {
+          event.preventDefault();
+
+          var blogId = $(this).attr("data-blog-id"); // Check if it's an update
           var title = $("#title").val();
           var content = $("#content").val();
 
           $.ajax({
             type: "POST",
-            url: '{% url "create_blog" %}',
+            url: `edit/${blogId}/`,
             headers: {
               "X-CSRFToken": "{{ csrf_token }}",
             },
@@ -127,21 +183,26 @@
                 .removeClass("d-none")
                 .addClass("d-block")
                 .text(response.message);
+
+              // Reset form and button state
               $("#title").val("");
               $("#content").val("");
+              $("#add-item-form").removeAttr("data-blog-id");
+              $("button[type='submit']").text("Add");
             },
             error: function (error) {
-              console.error("Error adding item:", error);
+              console.error("Error adding/updating item:", error);
             },
           });
         });
 
-        //delete blog
+        // Delete blog
         $(".delete-btn").on("click", function (event) {
           event.preventDefault();
           var blogId = $(this).attr("blog-id");
+
           $.ajax({
-            type: "POST",
+            type: "DELETE",
             url: `delete/${blogId}/`,
             headers: {
               "X-CSRFToken": "{{ csrf_token }}",

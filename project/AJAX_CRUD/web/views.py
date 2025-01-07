@@ -19,6 +19,16 @@ def create_blog(request):
         return JsonResponse({'blog_id':new_blog.id, 'message': 'Blog created successfully'})
     return redirect('blogs_view')
 
+def edit_blog(request, blog_id):
+    blog = Blog.objects.get(id=blog_id)
+    if request.method == 'POST':
+        data = json.loads(request.body)
+        blog.title = data['title']
+        blog.content = data['content']
+        blog.save()
+        return JsonResponse({'message': 'Blog updated successfully'})
+    return redirect('blogs_view')
+
 
 def delete_blog(request, blog_id):
     if request.method == 'POST':
